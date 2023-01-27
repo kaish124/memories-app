@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import Post from './Post/Post';
 import useStyles from './styles';
 
-const Posts = ({ currentId, setCurrentId }) => {
+const Posts = ({ topFunction, currentId, setCurrentId }) => {
     const posts = useSelector((state) => state.posts);
     const classes = useStyles();
 
@@ -16,7 +16,7 @@ const Posts = ({ currentId, setCurrentId }) => {
            <Grid className={classes.container} container alignItems="stretch" spacing={3}>
               {posts.map((post) => (
                 <Grid key={post._id} item xs={12} sm={6}> 
-                   <Post post={post} currentId={currentId} setCurrentId={ setCurrentId } />                    {/*edited...*/}
+                   <Post topFunction={topFunction} post={post} currentId={currentId} setCurrentId={ setCurrentId } />                    {/*edited...*/}
                 </Grid>
               ))}
            </Grid>

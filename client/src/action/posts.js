@@ -7,13 +7,13 @@ export const getPosts = () => async (dispatch) => {
 
         dispatch({ type: FETCH_ALL, payload: data });
     } catch(error){
-        console.log(error.message);
+        console.log(error);
     }
 } 
 
 export const createPost = (post) => async (dispatch) => {
     try{
-        post.createdAt = new Date();
+        // post.createdAt = new Date();
        const { data } = await api.createPost(post);
     //    data.createdAt = new Date();
        dispatch({ type: CREATE, payload: data});
