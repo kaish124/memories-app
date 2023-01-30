@@ -16,7 +16,7 @@ const Post = ({ topFunction, post, currentId, setCurrentId }) => {
     const user = JSON.parse(localStorage.getItem('profile'));
 
     const Likes = () => {
-     if(post.likes.length > 0){
+     if(post?.likes?.length > 0){
           return post.likes.find((like) => like === (user?.result?.googleId || user?.result?._id))
           ? (
                <><ThumbUpAltIcon fontSize="small" />&nbsp;{post.likes.length >= 2 ? `You and ${post.likes.length - 1} ${post.likes.length - 1 === 1 ? 'other' : 'others'}`: `${post.likes.length} Like${post.likes.length > 1 ? 's': ''}`}</>
@@ -27,7 +27,7 @@ const Post = ({ topFunction, post, currentId, setCurrentId }) => {
      return <><ThumbUpAltOutlined fontSize="small" />&nbsp;Likes</>;
     }
     return(
-       <Card className={classes.Card} >
+       <Card className={classes.card} raised elevation={6}>
             {/* <h1 style= {{color: "orange"}} className={classes.overlay}>Hello</h1> */}
             <div style={{position: 'relative'}}>
 
@@ -45,7 +45,7 @@ const Post = ({ topFunction, post, currentId, setCurrentId }) => {
             )}
             </div>
            <div className={classes.details}>
-                <Typography variant="body2" color = "textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
+                <Typography variant="body2" color = "textSecondary">{post?.tags?.map((tag) => `#${tag} `)}</Typography>
            </div>
            <Typography className={classes.title} gutterBottom variant="h5" component="h2">{post.title}</Typography>
            <CardContent>

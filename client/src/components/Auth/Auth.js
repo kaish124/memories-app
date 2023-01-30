@@ -11,6 +11,7 @@ import { gapi } from "gapi-script";
 import {signIn, signUp} from "../../action/users";
 
 const Auth = () => {
+  // console.log("hello");
     gapi.load("client:auth2", () => {
         gapi.auth2.init({
           clientId:
