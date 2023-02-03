@@ -15,8 +15,8 @@ const Navbar = () => {
     
     const logOut = useCallback(() =>{
         dispatch({type: 'LOGOUT'});
-        history.push('/');
         setUser(null);
+        history.push('/');
     },[dispatch, history]);
 
     useEffect(() => {
